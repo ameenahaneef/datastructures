@@ -85,14 +85,14 @@ void main(){
   list.addNode(30);
   list.addNode(60);
   //list.display();
-  list.insertAfter(20, 50);
-  list.insertAfter(60, 1);
- // list.display();
-  list.insertAfter(1,2);
-  //list.display();
-  list.insertAfter(2, 100);
-  list.insertBefore(100, 0);
-    list.insertBefore(30, 0);
+ // list.insertAfter(10, 50);
+//   list.insertAfter(60, 1);
+//  // list.display();
+//   list.insertAfter(1,2);
+//   //list.display();
+//   list.insertAfter(2, 100);
+  list.insertBefore(0, 0);
+//     list.insertBefore(30, 0);
 
   list.display();
 }
