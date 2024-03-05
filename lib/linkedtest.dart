@@ -97,6 +97,31 @@ void insertBefore(int beforeTo,int data){
   
 
   }
+  void middle(){
+    Node? slowPointer=head;
+    Node? fastPointer=head;
+    Node? prev=null;
+
+    if(head==null){
+      print('emprty');
+    }
+    while(fastPointer!=null&&fastPointer.next!=null){
+      
+      fastPointer=fastPointer.next!.next;
+prev=slowPointer;
+      slowPointer=slowPointer!.next;
+
+    }
+   if(prev!=null){
+    prev.next=slowPointer!.next;
+    if(prev.next==null)
+{
+  tail=prev;
+}   }else{
+  head=null;
+  tail=null;
+}
+  }
   void reversed(){
     Node? prev=null;
 Node? current=head;
@@ -147,6 +172,25 @@ head=prev;
 
     
   }
+  int? binary(List<int>list,int target){
+    int l=0,r=list.length-1;
+    while(l<r){
+      int? mid=l+r~/2;
+      if(target==list[mid]){
+        return mid;
+
+      }else{
+        if(target <list[mid]){
+          r=mid-1;
+        }else{
+          r=mid+1;
+        }
+      }
+      
+    }
+    return -1;
+    
+  }
   void deleteAfter(int afterTo){
     Node? temp=head;
     while(temp!=null&&temp.data!=afterTo){
@@ -157,7 +201,7 @@ head=prev;
     }
     temp?.next=temp.next?.next;
   }
-  
+ 
 }
 void main(){
   singleLinkedList list=singleLinkedList();
@@ -165,11 +209,14 @@ void main(){
   list.addNode(20);
   list.addNode(30);
   list.addNode(40);
+  list.addNode(40);
+  list.middle();
+  
   //list.deleteBefore(20);
  //  list.prepend(20);
  //  list.insertAfter(10,0);
  //list.insertBefore(30, 1);
   //list.reversed();
-  list.deleteAfter(30);
+  //list.deleteAfter(30);
   list.display();
 }

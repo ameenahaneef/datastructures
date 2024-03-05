@@ -92,7 +92,7 @@ void main(){
 //   //list.display();
 //   list.insertAfter(2, 100);
   list.insertBefore(0, 0);
-//     list.insertBefore(30, 0);
+   list.insertBefore(30, 0);
 
   list.display();
 }
